@@ -1,4 +1,10 @@
+<%@page import="com.poscodx.mysite.vo.GuestbookVo"%>
+<%@page import="com.poscodx.mysite.dao.GuestbookDao"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	List<GuestbookVo> list = (List<GuestbookVo>)request.getAttribute("list");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,21 +26,41 @@
 		</div>
 		<div id="content">
 			<div id="guestbook">
-				<form action="/guestbook" method="post">
-					<input type="hidden" name="a" value="insert">
+				<form action="/mysite02/guestbook" method="post">
+					<input type="hidden" name="a" value="add">
 					<table>
 						<tr>
 							<td>이름</td><td><input type="text" name="name"></td>
-							<td>비밀번호</td><td><input type="password" name="pass"></td>
+							<td>비밀번호</td><td><input type="password" name="password"></td>
 						</tr>
 						<tr>
-							<td colspan=4><textarea name="content" id="content"></textarea></td>
+							<td colspan=4><textarea name="message" id="content"></textarea></td>
 						</tr>
 						<tr>
 							<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
 						</tr>
 					</table>
 				</form>
+				
+				<br>
+				<%
+					int count = 1;
+					for(GuestbookVo vo : list){
+				%>
+				<table width=510 border=1>
+					<tr>
+						<td>[<%=count++ %>]</td>
+								<td><%=vo.getName() %></td>
+								<td><%=vo.getReg_date() %></td>
+								<td><a href="<%=request.getContextPath() %>/guestbook?a=deleteform&no=<%=vo.getNo() %>">삭제</a></td>
+					</tr>
+					<tr>
+						<td colspan=4><%=vo.getContents().replace("\n","<br>")%></td>
+					</tr>
+				</table>
+				<br>
+				<% } %>
+				
 				<ul>
 					<li>
 						<table>
@@ -58,7 +84,7 @@
 		</div>
 		<div id="navigation">
 			<ul>
-				<li><a href="">안대혁</a></li>
+				<li><a href="">김소정</a></li>
 				<li><a href="">방명록</a></li>
 				<li><a href="">게시판</a></li>
 			</ul>
