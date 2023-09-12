@@ -10,10 +10,8 @@ import com.poscodx.web.mvc.Action;
 import com.poscodx.web.utils.WebUtil;
 
 public class JoinFormAction implements Action {
-
-   @Override
-   public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {      
-      WebUtil.forward("user/joinform", request, response);
-   }
-
+	@Override
+	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		WebUtil.forward("user/joinform", request, response);
+	}
 }

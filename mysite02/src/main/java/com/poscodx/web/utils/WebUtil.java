@@ -8,10 +8,10 @@ import javax.servlet.http.HttpServletResponse;
 
 public class WebUtil {
 
-   public static void forward(String path, HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      request
-      .getRequestDispatcher("/WEB-INF/views/" + path + ".jsp")
-      .forward(request, response);
-   }
-   
+	public static void forward(String path, HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		request
+			.getRequestDispatcher("/WEB-INF/views/" + path + ".jsp")
+			.forward(request, response);
+	}
+	
 }
