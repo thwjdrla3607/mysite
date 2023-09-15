@@ -25,6 +25,4 @@ public class GuestbookService {
 	public Boolean addContents(GuestbookVo vo) {
 		return guestbookRepository.insert(vo);
 	}
-	
-	// 서비스 구현
 }
