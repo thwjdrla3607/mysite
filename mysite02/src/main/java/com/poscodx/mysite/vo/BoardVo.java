@@ -12,6 +12,31 @@ public class BoardVo {
 	private int userNo;			// 작성자 no
 	private String userName;	// 게시글 작성자 이름 (join으로 받아오기)
 	
+	public BoardVo(int no, String title, String contents, int hit, 
+			String regDate, int groupNo, int orderNo, int depth, 
+			int userNo, String userName) {
+		this.no = no;
+		this.title = title;
+		this.contents = contents;
+		this.hit = hit;
+		this.regDate = regDate;
+		this.groupNo = groupNo;
+		this.orderNo = orderNo;
+		this.depth = depth;
+		this.userNo = userNo;
+		this.userName = userName;
+	}
+	
+	public BoardVo() {
+	}
+	
+	public BoardVo(int groupNo, int orderNo, int depth) {
+		super();
+		this.groupNo = groupNo;
+		this.orderNo = orderNo;
+		this.depth = depth;
+	}
+	
 	public int getNo() {
 		return no;
 	}

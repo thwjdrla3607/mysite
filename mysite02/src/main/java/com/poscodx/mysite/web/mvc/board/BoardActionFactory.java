@@ -10,13 +10,19 @@ public class BoardActionFactory implements ActionFactory{
 		Action action = null;
 		
 		if("delete".equals(actionName)) {
-			action = new DeleteAction();
-		} else if("deleteform".equals(actionName)) {
-			action = new DeleteFormAction();
-		} else if("add".equals(actionName)) {
-			action = new AddAction();
+			action = new DeleteAction(); // o
+		} else if("write".equals(actionName)){
+			action = new WriteAction(); // 계층형
+		} else if("writeform".equals(actionName)) {
+			action = new WriteFormAction(); // o 
+		} else if("modify".equals(actionName)){
+			action = new ModifyAction(); // o
+		} else if("modifyform".equals(actionName)){
+			action = new ModifyFormAction(); // o
+		} else if("viewform".equals(actionName)){
+			action = new ViewFormAction(); // o
 		} else {
-			action = new ListAction();
+			action = new ListAction(); // 페이징
 		}
 		
 		return action;

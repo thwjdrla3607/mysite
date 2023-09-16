@@ -1,10 +1,10 @@
-package com.poscodx.mysite.dao;
+package com.poscodx.mysite.repository;
 
 public class URL {
 	private boolean where; // 집이면 False, 학원이면 True
 	
 	public URL() {
-		where = false;
+		where = true;
 	}
 	
 	public void setWhere(boolean where) {

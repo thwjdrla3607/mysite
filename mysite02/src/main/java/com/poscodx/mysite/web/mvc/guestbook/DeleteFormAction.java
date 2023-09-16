@@ -16,3 +16,4 @@ public class DeleteFormAction implements Action {
 		WebUtil.forward("guestbook/deleteform", request, response);
 	}
 }
+
