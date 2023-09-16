@@ -284,7 +284,7 @@ public class BoardDao {
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("error:" + e);
-		} finally {
+		} finally {	
 			try {
 				if (pstmt != null)
 					pstmt.close();

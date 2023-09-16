@@ -14,8 +14,6 @@ import com.poscodx.web.utils.WebUtil;
 public class WriteFormAction implements Action {
 	@Override
 	public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		// Access Control
-		// 로그인 정보 받아오기
 		HttpSession session = request.getSession();
 		UserVo authUser = (UserVo)session.getAttribute("authUser");
 		int no = Integer.parseInt(request.getParameter("no"));

@@ -23,7 +23,11 @@ public class WriteAction implements Action{
 		String contents = request.getParameter("contents");
 		String no = request.getParameter("no");
 		BoardVo vo = null;
-				
+		
+		if (authUser == null) {
+			response.sendRedirect(request.getContextPath() + "/user?a=noSession");	
+		}
+		
 		if (no == null) { // 게시글 작성
 			int maxGroupNo = new BoardDao().findMaxGroupNo();			
 			vo = new BoardVo(maxGroupNo + 1, 1, 1);
