@@ -10,7 +10,6 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.poscodx.mysite.dao.URL;
 import com.poscodx.mysite.vo.GuestbookVo;
 
 @Repository

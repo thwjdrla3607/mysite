@@ -10,8 +10,7 @@ import com.poscodx.mysite.vo.GuestbookVo;
 
 @Service
 public class GuestbookService {
-	
-	@Autowired 
+	@Autowired
 	private GuestbookRepository guestbookRepository;
 
 	public List<GuestbookVo> getContentsList() {
