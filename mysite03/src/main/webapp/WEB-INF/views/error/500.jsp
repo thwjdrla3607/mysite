@@ -9,9 +9,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Not Found(404) - Ooooooops</h1>
+	<h1>예기치 오류(Internal Server Error 500)</h1>
 	<p>
-		죄송합니다. 요청하신 페이지를 찾을 수 없습니다.
+		죄송합니다. 오류가 발생했습니다.<br>
+		잠시후, 다시 시도해 주세요.
 	</p>
 </body>
 </html>
