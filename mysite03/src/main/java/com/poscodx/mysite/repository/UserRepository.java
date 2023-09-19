@@ -34,4 +34,4 @@ public class UserRepository {
 		int count = sqlSession.insert("user.insert", vo);
 		return count == 1;
 	}
-}
+}s
