@@ -48,6 +48,20 @@
 			<bean class="com.poscodx.mysite.security.AuthInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
+
+	<!-- MessageSource -->
+	<bean id="messageSource"
+		class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>messages/messages_ko</value>
+				<value>messages/messages_en</value>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- mvc url-resource mapping -->
+   <mvc:resources mapping="/assets/upload-images/**" location="file:/mysite-uploads/" />
 	
 	<!-- View Resolver -->
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">

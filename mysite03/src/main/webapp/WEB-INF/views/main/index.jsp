@@ -15,13 +15,13 @@
 		<div id="wrapper">
 			<div id="content">
 				<div id="site-introduction">
-					<img id="profile" src="${pageContext.request.contextPath }/assets/images/loopy.png">
-					<h2>안녕하세요.<br>
-					소증의 MYSITE에 오신 것을 환영합니다.</h2>
+					<img id="profile" src="${pageContext.request.contextPath }${siteVo.profile }">
+					<h2>
+						${siteVo.welcome }
+					</h2>
 					<p>
-						이 사이트는  웹 프로그램밍 실습과제 예제 사이트입니다.<br>
-						저는 김소정입니다. <br>
-						<br>
+						${fn:replace(siteVo.description, newline, "<br>") }
+						<br><br>
 						<a href="${pageContext.request.contextPath }/guestbook">방명록</a>에 글 남기기<br>
 					</p>
 				</div>
