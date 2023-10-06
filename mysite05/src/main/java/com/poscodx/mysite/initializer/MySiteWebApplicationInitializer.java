@@ -2,7 +2,10 @@ package com.poscodx.mysite.initializer;
 
 import javax.servlet.Filter;
 
+import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.filter.CharacterEncodingFilter;
+import org.springframework.web.servlet.DispatcherServlet;
+import org.springframework.web.servlet.FrameworkServlet;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 import com.poscodx.mysite.config.AppConfig;
@@ -12,17 +15,17 @@ public class MySiteWebApplicationInitializer extends AbstractAnnotationConfigDis
 
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		return new Class<?>[] { AppConfig.class };
+		return new Class<?>[] {AppConfig.class};
 	}
 
 	@Override
 	protected Class<?>[] getServletConfigClasses() {
-		return new Class<?>[] { WebConfig.class };
+		return new Class<?>[] {WebConfig.class};
 	}
 
 	@Override
 	protected String[] getServletMappings() {
-		return new String[] { "/" };
+		return new String[] {"/"};
 	}
 
 	@Override
@@ -30,4 +33,11 @@ public class MySiteWebApplicationInitializer extends AbstractAnnotationConfigDis
 		return new Filter[] { new CharacterEncodingFilter("utf-8") };
 	}
 
+	@Override
+	protected FrameworkServlet createDispatcherServlet(WebApplicationContext servletAppContext) {
+		 DispatcherServlet servlet = (DispatcherServlet)super.createDispatcherServlet(servletAppContext);
+		 servlet.setThrowExceptionIfNoHandlerFound(true);
+		 
+		 return servlet;
+	}
 }
