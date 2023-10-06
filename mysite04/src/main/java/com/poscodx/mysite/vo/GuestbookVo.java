@@ -6,7 +6,6 @@ public class GuestbookVo {
 	private String contents;
 	private String password;
 	private String regDate;
-	
 	public Long getNo() {
 		return no;
 	}
@@ -37,7 +36,6 @@ public class GuestbookVo {
 	public void setRegDate(String regDate) {
 		this.regDate = regDate;
 	}
-	
 	@Override
 	public String toString() {
 		return "GuestbookVo [no=" + no + ", name=" + name + ", contents=" + contents + ", password=" + password

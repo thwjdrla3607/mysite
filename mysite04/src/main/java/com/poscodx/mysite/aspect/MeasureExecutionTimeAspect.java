@@ -8,7 +8,7 @@ import org.springframework.util.StopWatch;
 
 @Component
 @Aspect
-public class MeasureExecutionTimeAspect { // AOP를 사용하여 메서드의 실행 시간을 측정
+public class MeasureExecutionTimeAspect {
 	@Around("execution(* *..*.repository.*.*(..)) || execution(* *..*.service.*.*(..)) || execution(* *..*.controller.*.*(..))")
 	public Object adviceAround(ProceedingJoinPoint pjp) throws Throwable {
 		// before
@@ -25,6 +25,7 @@ public class MeasureExecutionTimeAspect { // AOP를 사용하여 메서드의 �
 		String taskName = className + "." + methodName;
 		
 		System.out.println("[Execution Time][" + taskName + "] " + totalTime + "mills");
+
 		return result;
 	}
 }
