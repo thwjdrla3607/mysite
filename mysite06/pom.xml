@@ -94,6 +94,7 @@
 	
 	<build>
 		<finalName>mysite06</finalName>
+		<!--
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -121,5 +122,6 @@
 				</configuration>
 			</plugin>						
 		</plugins>		
+-->
 	</build>	
 </project>
